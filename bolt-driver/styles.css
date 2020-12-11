@@ -93,7 +93,6 @@ h1, h3 {
 }
 
 .custom-container {
-    /*background-color: burlywood;*/
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -116,7 +115,6 @@ h1, h3 {
 }
 
 .right-panel {
-    /*background-color: darkorange;*/
     grid-column: 1 / span 2;
     display: grid;
     justify-items: center;
@@ -128,7 +126,7 @@ h1, h3 {
 }
 
 .custom-form {
-    margin: 20% auto auto auto;
+    margin: 20% auto 10% auto;
     width: 85%;
 }
 
@@ -196,7 +194,7 @@ h1, h3 {
     }
 }
 
-@media (min-height: 640px){
+@media (min-height: 720px){
     .custom-form {
         margin: auto;
     }
