@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+        <nav class="generic-left-right-padding">
+            <div><img width="200" src="igms/MAEDI.png"></div>
+        </nav>
+    </header>
+    <main>
+        <div class="generic-left-right-padding">
+            <h1>tus datos, tu salud</h1>
+            <div class="display-flex">
+                <h2>Chateá con Garupá y descubrí como tomar el control de tu información de salud</h2>
+                <div class="chat-container">
+                    <!-- <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script> -->
+                    <iframe width="100%" height="100%" style="border: none;" srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v1/inject.js'></script>
+                <script>
+                window.botpressWebChat.init({
+                    'composerPlaceholder': 'Hablá con Garupá',
+                    'botConversationDescription': 'Conocé como funciona la plataforma',
+                    'botName': 'Garupá',
+                    'botId': 'add7c721-a39e-4230-a338-e19db1b6a588',
+                    'hostUrl': 'https://cdn.botpress.cloud/webchat/v1',
+                    'messagingUrl': 'https://messaging.botpress.cloud',
+                    'clientId': 'add7c721-a39e-4230-a338-e19db1b6a588',
+                    'enableConversationDeletion': true,
+                    'showPoweredBy': false,
+                    'className': 'webchatIframe',
+                    'containerWidth': '100%25',
+                    'layoutWidth': '100%25',
+                    'hideWidget': true,
+                    'showCloseButton': false,
+                    'disableAnimations': true,
+                    'closeOnEscape': false,
+                    'showConversationsButton': false,
+                    'enableTranscriptDownload': false,
+                    'stylesheet':'https://webchat-styler-css.botpress.app/prod/code/3fcd3e4e-d5bc-4bf5-8699-14b621b3ada2/v31782/style.css'
+                    
+                });
+                window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+                </script></body>"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img class="generic-left-right-padding" width="150" src="igms/UBA-FADU.png">
+        <div class="generic-left-right-padding current-year"><script>document.write(new Date().getFullYear())</script></div>
+    </footer>
+</body>
+</html>
