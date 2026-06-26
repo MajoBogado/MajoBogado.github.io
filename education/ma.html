@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master's in Interactive Design — Majo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/loader.css">
+<style>
+.uni-logo {
+  margin: 0 0 clamp(32px, 5vw, 52px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.uni-logo img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+  padding: 10px;
+  background: #fff;
+}
+.uni-logo .uni-name {
+  font-size: 11.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* link preview cards */
+.link-previews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: clamp(24px, 4vw, 40px) 0;
+}
+.lp-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: border-color .2s;
+  color: inherit;
+  text-decoration: none;
+}
+.lp-card:hover {
+  border-color: var(--ink);
+}
+.lp-thumb {
+  aspect-ratio: 3/2;
+  background: repeating-linear-gradient(45deg,#f3f3f1 0 6px,#fafafa 6px 12px);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.lp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lp-thumb .lp-ph-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  padding: 10px;
+}
+.lp-info {
+  padding: 10px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.lp-title {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lp-source {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lp-source .lp-arrow {
+  opacity: 0;
+  transition: opacity .2s, transform .2s;
+  color: var(--accent);
+}
+.lp-card:hover .lp-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead thin">
+  <a class="wordmark" href="../index.html" data-dig data-label="Home">Majo</a>
+</header>
+<nav class="crumbs">
+  <a href="../index.html" data-dig data-label="Home">Majo</a><span class="sep">/</span>
+  <a href="../education.html" data-dig data-label="Education">Education</a><span class="sep">/</span>
+  <span class="here">Master's in Interactive Design</span>
+</nav>
+<section class="page-head">
+  <p class="eyebrow">Education — master's</p>
+  <h1>Master's in Interactive Design</h1>
+</section>
+<div class="uni-logo">
+  <img src="../assets/logos/uba.png" alt="Universidad de Buenos Aires logo">
+  <span class="uni-name">Universidad de<br>Buenos Aires<br>(UBA)</span>
+</div>
+<div class="prose">
+<p>I genuinely love studying, not for the sake of it, but because I find the academic environment fascinating: interacting with people from different fields, backgrounds, and interests. By the time I finished my undergraduate degree, it was obvious to me that I would keep going. I had specific goals and things I still wanted to learn.</p>
+<p>In 2021, I started exploring master's programs that combined design and technology with a focus on health design. I chose the Interactive Design program at the Universidad de Buenos Aires because its curriculum was exactly the mix I was looking for. The modules that excited me most were technology (hardware and software), biodesign, and artificial intelligence. So by 2022 I was starting this new chapter.</p>
+<div class="link-previews">
+  <a class="lp-card" href="https://mbogado.medium.com/an%C3%A1lisis-y-visualizaci%C3%B3n-de-datos-utilizando-chatgpt-4-noteable-32910006cf52" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="https://miro.medium.com/v2/resize:fit:1200/0*fQU1mwtRILa1DRbr.png" alt=""></div>
+    <div class="lp-info">
+      <span class="lp-title">Análisis y visualización de datos utilizando ChatGPT 4 &amp; Noteable</span>
+      <span class="lp-source">medium.com <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+  <a class="lp-card" href="https://www.behance.net/gallery/167064455/Introduccion-al-biodiseno-El-rol-del-disenador" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="../assets/images/biodesign.png" alt="Introducción al Biodiseño"></div>
+    <div class="lp-info">
+      <span class="lp-title">Introducción al Biodiseño: El rol del diseñador</span>
+      <span class="lp-source">behance.net <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+  <a class="lp-card" href="https://mbogado.medium.com/la-importancia-de-sentirnos-escuchados-c%C3%B3mo-construir-un-dispositivo-con-el-que-nos-podamos-1936c6cdc752" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*s_BYPZFTnRJIxgpA" alt=""></div>
+    <div class="lp-info">
+      <span class="lp-title">La importancia de sentirnos escuchados: cómo construir un dispositivo con el que nos podamos comunicar</span>
+      <span class="lp-source">medium.com <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+  <a class="lp-card" href="https://mbogado.medium.com/luz-atm%C3%B3sferas-extraterrestres-y-una-primera-aproximaci%C3%B3n-a-los-biomateriales-713d5a4b13d1" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*l1Yh8RHwmlYwNdB6" alt=""></div>
+    <div class="lp-info">
+      <span class="lp-title">Luz, atmósferas extraterrestres y una primera aproximación a los biomateriales</span>
+      <span class="lp-source">medium.com <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+  <a class="lp-card" href="https://mbogado.medium.com/m%C3%A1quina-simpoi%C3%A9tica-el-aceite-como-recurso-122c434c771c" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="https://miro.medium.com/v2/da:true/resize:fit:1200/0*z0uU-78qOZUxjy-m" alt=""></div>
+    <div class="lp-info">
+      <span class="lp-title">Máquina Simpoiética: el aceite como recurso</span>
+      <span class="lp-source">medium.com <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+  <a class="lp-card" href="https://mbogado.medium.com/an-approach-to-artificial-intelligence-and-the-numenta-model-44e43029399e" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="https://miro.medium.com/v2/da:true/resize:fit:1024/0*BsdP6_8ZPACJsxlM" alt=""></div>
+    <div class="lp-info">
+      <span class="lp-title">An Approach to Artificial Intelligence and the Numenta Model</span>
+      <span class="lp-source">medium.com <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+</div>
+<p>This is where <a class="link" href="../projects/meni.html" data-dig data-label="meni">Meni</a> was born &mdash; a project I'm deeply proud of.</p>
+<p>I defended my thesis in December 2025 and graduated with honors <em>(Sobresaliente)</em>.</p>
+</div>
+<a class="back" href="../education.html" data-dig data-label="Education"><span class="a">←</span> Back to Education</a>
+</div>
+<footer class="foot">
+  <span>No social media. <a href="../index.html" data-dig data-label="Home">Just this.</a></span>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

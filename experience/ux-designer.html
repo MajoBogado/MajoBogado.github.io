@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As Designer — Majo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/loader.css">
+<style>
+.link-previews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: clamp(24px, 4vw, 40px) 0;
+}
+.lp-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: border-color .2s;
+  color: inherit;
+  text-decoration: none;
+}
+.lp-card:hover { border-color: var(--ink); }
+.lp-thumb {
+  aspect-ratio: 3/2;
+  background: repeating-linear-gradient(45deg,#f3f3f1 0 6px,#fafafa 6px 12px);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+.lp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lp-thumb .lp-ph-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+  padding: 10px;
+}
+.lp-info {
+  padding: 10px 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.lp-title {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.lp-source {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lp-arrow {
+  opacity: 0;
+  transition: opacity .2s, transform .2s;
+  color: var(--accent);
+}
+.lp-card:hover .lp-arrow { opacity: 1; transform: translate(2px,-2px); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead thin">
+  <a class="wordmark" href="../index.html" data-dig data-label="Home">Majo</a>
+</header>
+<nav class="crumbs">
+  <a href="../index.html" data-dig data-label="Home">Majo</a><span class="sep">/</span>
+  <a href="../experience.html" data-dig data-label="Experience">Experience</a><span class="sep">/</span>
+  <span class="here">AS A DESIGNER</span>
+</nav>
+<section class="page-head">
+  <p class="eyebrow">Experience — 2021 – 2024 · ~2 years</p>
+  <h1>As a Designer</h1>
+</section>
+<div class="prose">
+<p>I designed features, information flows, modules, and platforms for clinical trial software, working across development, operations, and clinical teams, and covering everything from internal tooling to patient-facing interfaces.</p>
+<p>Most of my work lived at the intersection of UX research and UI design. That meant getting close to the problem first, user interviews, usability testing, understanding how different types of users (site coordinators, investigators, patients) actually interacted with the systems, and then translating that into interfaces that worked for all of them. Clinical trial users span a wide range of ages and comfort with technology, which kept accessibility front and center, not as a checkbox but as a real design constraint.</p>
+<div class="link-previews">
+  <a class="lp-card" href="https://www.behance.net/gallery/168778265/Design-process-involved-in-the-redesign-of-a-web-page" target="_blank" rel="noopener">
+    <div class="lp-thumb"><img src="../assets/images/behance-redesign.png" alt="Design process involved in the redesign of a web page"></div>
+    <div class="lp-info">
+      <span class="lp-title">Design process involved in the redesign of a web page</span>
+      <span class="lp-source">behance.net <span class="lp-arrow">↗</span></span>
+    </div>
+  </a>
+</div>
+<p>One of the projects I'm most proud of is building the design system from scratch, solo. Unifying the experience across all platforms while meeting WCAG accessibility standards in some areas like contrast, non-color-dependent interactions, legibility, was one of the more demanding and rewarding things I worked on here.</p>
+<p>On the UI side: end-to-end design of digital products and modules, high-fidelity prototypes for user testing and stakeholder presentations, interaction design, and close collaboration with the dev team to make sure what got built actually matched what was designed but also could be developed according to the development team constrains, such as time, experience and availability.</p>
+<p>Most of what I designed here is under NDA, but honestly? My designer's eye shows up everywhere on this site, in the images, the projects, the way things are put together. This is probably the best portfolio piece I have.</p>
+</div>
+<a class="back" href="../experience.html" data-dig data-label="Experience"><span class="a">←</span> Back to Experience</a>
+</div>
+<footer class="foot">
+  <span>No social media. <a href="../index.html" data-dig data-label="Home">Just this.</a></span>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
