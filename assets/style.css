@@ -1,0 +1,439 @@
+/* ============================================================
+   Majo — personal site
+   Clean: IBM Plex Mono, black & white, #75AADB used sparingly.
+   The newspaper / engraving look lives ONLY in the loader.
+   ============================================================ */
+
+:root{
+  --ink:#141414;
+  --ink-2:#3a3a3a;
+  --muted:#8a8a8a;
+  --faint:#c9c9c9;
+  --rule:#e3e3e3;
+  --paper:#fbfbfa;
+  --accent:#0cbadc;
+  --maxw:960px;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Mono","Courier New",monospace;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+::selection{background:var(--accent);color:#fff}
+
+a{color:inherit;text-decoration:none}
+
+/* ---------- shell ---------- */
+.wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:clamp(28px,6vw,64px) clamp(22px,5vw,40px) 120px;
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--ink);
+  margin-bottom:6px;
+}
+.masthead .wordmark{
+  font-weight:600;
+  font-size:clamp(20px,3.5vw,26px);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.masthead .dateline{
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-align:right;
+  line-height:1.5;
+  white-space:nowrap;
+}
+.masthead.thin{border-bottom:1px solid var(--rule)}
+.subrule{
+  height:0;border:0;border-top:1px solid var(--rule);
+  margin:0 0 clamp(34px,6vw,58px);
+}
+
+/* ---------- breadcrumb ---------- */
+.crumbs{
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 clamp(30px,5vw,46px);
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+}
+.crumbs a{border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.crumbs a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.crumbs .sep{color:var(--faint)}
+.crumbs .here{color:var(--ink);font-weight:500}
+
+/* ---------- hero / intro ---------- */
+.hero{margin:clamp(36px,8vw,84px) 0 clamp(48px,8vw,92px)}
+.hero h1{
+  font-weight:200;
+  font-size:clamp(34px,7.5vw,68px);
+  line-height:1.04;
+  letter-spacing:-.01em;
+  margin:0 0 clamp(30px,5vw,48px);
+  text-wrap:balance;
+}
+.hero h1 em{font-style:normal;color:var(--accent)}
+
+.lede{max-width:60ch}
+.lede p{
+  font-weight:300;
+  font-size:clamp(15px,1.7vw,17px);
+  color:var(--ink-2);
+  margin:0 0 1.5em;
+  text-wrap:pretty;
+}
+.lede p:last-child{margin-bottom:0}
+.lede p.kicker{
+  color:var(--ink);
+  font-weight:400;
+}
+
+/* page intro on sub-pages */
+.page-head{margin:0 0 clamp(40px,7vw,72px)}
+.page-head .eyebrow{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 18px;
+}
+.page-head h1{
+  font-weight:200;
+  font-size:clamp(30px,6vw,56px);
+  line-height:1.05;letter-spacing:-.01em;
+  margin:0 0 clamp(26px,4vw,38px);
+  text-wrap:balance;
+}
+.page-head .desc{max-width:64ch}
+.page-head .desc p{
+  font-weight:300;font-size:clamp(14.5px,1.6vw,16px);
+  color:var(--ink-2);margin:0 0 1.4em;text-wrap:pretty;
+}
+.page-head .desc p:last-child{margin-bottom:0}
+
+/* ---------- the index (rabbit-hole list) ---------- */
+.index-label{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);
+  display:flex;align-items:center;gap:14px;
+  margin:0 0 8px;
+}
+.index-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+.burrow{list-style:none;margin:0;padding:0}
+.burrow > li{border-bottom:1px solid var(--rule)}
+
+/* a digging row: number · title · sub-items · rabbit peek */
+.dig{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:6px 22px;
+  align-items:baseline;
+  padding:clamp(20px,3.2vw,30px) 0;
+  position:relative;
+}
+.dig .idx{
+  font-weight:400;font-size:12px;letter-spacing:.1em;
+  color:var(--muted);font-variant-numeric:tabular-nums;
+  padding-top:.55em;
+}
+.dig .title{
+  display:flex;align-items:center;gap:16px;
+  font-weight:300;
+  font-size:clamp(26px,4.4vw,40px);
+  line-height:1.05;letter-spacing:-.01em;
+  transition:color .25s;
+}
+.dig .title .label{position:relative}
+.dig:hover .title{color:#000}
+
+/* hover rabbit peek */
+/* hover rabbit peek — the rabbit dives in & out of a hole on the ground line.
+   clip-path cuts ONLY at the bottom (the ground): ears overflow freely upward,
+   but anything below the ground is clipped, so the rabbit vanishes INTO the hole. */
+.peek{
+  position:relative;
+  width:34px;height:26px;flex:0 0 auto;
+  clip-path:inset(-400% -400% 0 -400%);
+}
+.peek svg{
+  position:absolute;left:50%;bottom:0;width:30px;height:34px;
+  transform:translate(-50%,34px);            /* at rest: tucked down inside the hole */
+  transition:transform .46s cubic-bezier(.34,1.28,.42,1);
+  z-index:1;
+}
+.title:hover .peek svg,.leaf:hover .peek svg{transform:translate(-50%,2px)}
+.peek .hole{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:34px;height:9px;border-radius:50%;
+  background:var(--ink);
+  opacity:0;
+  transition:opacity .2s ease .3s;           /* on unhover: linger, then fade once rabbit is gone */
+  z-index:2;                                  /* hole sits ON TOP so the rabbit dives behind it */
+}
+.title:hover .peek .hole,.leaf:hover .peek .hole{opacity:1;transition:opacity .16s ease 0s}
+
+/* sub-items row */
+.subs{
+  grid-column:2;
+  display:flex;flex-wrap:wrap;gap:8px 10px;
+  margin-top:14px;
+}
+.chip{
+  font-size:12.5px;font-weight:400;letter-spacing:.02em;
+  color:var(--ink-2);
+  padding:5px 13px;
+  border:1px solid var(--rule);
+  border-radius:999px;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .2s,color .2s,background .2s;
+  white-space:nowrap;
+}
+.chip:hover{border-color:var(--ink);color:#000;position:relative;z-index:10}
+.chip .dot{
+  width:5px;height:5px;border-radius:50%;background:var(--faint);
+  transition:background .2s;
+}
+.chip:hover .dot{background:var(--accent)}
+
+/* chip rabbit — the SAME rabbit, diving in & out of the chip's own dot-burrow.
+   The dot stays put as the permanent hole; only the rabbit dives. */
+.cpeek{
+  position:relative;width:9px;height:6px;flex:0 0 auto;
+  clip-path:inset(-700% -700% 0 -700%);
+}
+.cpeek .chole{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:6px;height:5px;border-radius:50%;background:var(--faint);
+  transition:background .2s;
+  z-index:2;
+}
+.chip:hover .cpeek .chole{background:var(--accent)}
+.cpeek svg{
+  position:absolute;left:50%;bottom:0;width:19px;height:21px;
+  color:var(--ink);
+  transform:translate(-50%,21px);            /* at rest: tucked down in the dot */
+  transition:transform .44s cubic-bezier(.34,1.28,.42,1);
+  z-index:1;
+  pointer-events:none;
+}
+.chip:hover .cpeek svg{transform:translate(-50%,-10px)}
+.dig .meta{
+  grid-column:2;font-size:12px;color:var(--muted);
+  letter-spacing:.04em;margin-top:4px;
+}
+
+/* ---------- leaf list (sub-page items) ---------- */
+.leaves{list-style:none;margin:clamp(10px,3vw,24px) 0 0;padding:0}
+.leaves li{border-top:1px solid var(--rule)}
+.leaves li:last-child{border-bottom:1px solid var(--rule)}
+.leaf{
+  display:flex;align-items:center;gap:18px;
+  padding:clamp(16px,2.6vw,24px) 0;
+}
+.leaf .lnum{
+  font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;
+  min-width:2.2em;
+}
+.leaf .lmain{flex:1;min-width:0}
+.leaf .lt{
+  font-weight:300;font-size:clamp(18px,2.6vw,24px);
+  letter-spacing:-.005em;transition:color .2s;
+}
+.leaf:hover .lt{color:#000}
+.leaf .ld{display:block;font-size:13px;color:var(--muted);margin-top:4px;font-weight:300}
+.leaf .arrow{
+  font-size:15px;color:var(--faint);transition:color .2s,transform .25s;
+}
+.leaf:hover .arrow{color:var(--accent);transform:translateX(4px)}
+
+/* generic prose blocks on leaf pages */
+.prose{max-width:100%;margin:clamp(8px,2vw,18px) 0 0}
+.prose p{font-weight:300;color:var(--ink-2);margin:0 0 1.5em;text-wrap:pretty}
+.prose h2{
+  font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink);margin:clamp(30px,5vw,48px) 0 14px;
+}
+.prose a.link{border-bottom:1px solid var(--accent);color:var(--ink);transition:color .15s,font-weight .15s}
+.prose a.link:hover{color:var(--accent);font-weight:600}
+.prose ol,.prose ul{margin:0 0 1.5em;padding-left:1.5em;color:var(--ink-2);font-weight:300}
+.prose ol li,.prose ul li{margin:0 0 .7em;padding-left:.35em;text-wrap:pretty;line-height:1.6}
+.prose ol li::marker{color:var(--ink)}
+.prose ul li::marker{color:var(--ink)}
+
+/* ---- company logo strip ---- */
+.logo-label{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);
+  display:flex;align-items:center;gap:14px;
+  margin:clamp(34px,5vw,52px) 0 14px;
+}
+.logo-label::after{content:"";flex:1;height:1px;background:var(--rule)}
+.logo-strip{display:flex;flex-wrap:wrap;gap:12px;margin:0}
+.logo-tile{
+  display:flex;align-items:center;justify-content:center;
+  height:102px;width:148px;padding:0 22px;
+  background:#fff;border:1px solid var(--rule);
+  transition:border-color .15s,transform .15s;
+}
+.logo-tile img{height:22px;max-width:104px;width:auto;object-fit:contain;display:block}
+a.logo-tile{cursor:pointer}
+a.logo-tile:hover{border-color:var(--accent);transform:translateY(-2px)}
+.logo-tile.is-static{cursor:default}
+
+/* ---- video card ---- */
+.video-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;
+  margin:clamp(22px,3.5vw,34px) 0;
+}
+.video-card{
+  display:flex;flex-direction:column;
+  margin:0;
+  border:1px solid var(--rule);background:#fff;overflow:hidden;
+}
+.vc-thumb{
+  position:relative;display:block;
+  aspect-ratio:16/9;width:100%;
+  background:#000;overflow:hidden;
+}
+.vc-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.video-card:hover .vc-thumb img{transform:scale(1.04)}
+.vc-play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.92);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.vc-play::after{
+  content:"";margin-left:3px;
+  border-style:solid;border-width:8px 0 8px 13px;
+  border-color:transparent transparent transparent var(--ink);
+}
+.video-card:hover .vc-play{background:#fff}
+.vc-meta{
+  display:flex;flex-direction:column;justify-content:center;gap:6px;
+  padding:14px 16px;min-width:0;
+}
+.vc-eyebrow{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+}
+.vc-title{font-size:clamp(15px,1.7vw,17px);color:var(--ink);font-weight:400}
+.vc-desc{font-size:13.5px;line-height:1.5;color:var(--ink-2);font-weight:300;text-wrap:pretty}
+@media (max-width:640px){
+  .video-row{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .vc-desc{display:none}
+}
+.burrow + .index-label{margin-top:clamp(48px,8vw,92px)}
+.contact{margin-top:14px}
+.note{
+  border-left:2px solid var(--accent);
+  padding:2px 0 2px 18px;margin:clamp(24px,4vw,40px) 0;
+  color:var(--muted);font-size:13.5px;font-weight:300;
+}
+
+/* placeholder image — striped, with monospace caption */
+.ph{
+  margin:clamp(22px,4vw,38px) 0;
+  border:1px solid var(--rule);
+  background:
+    repeating-linear-gradient(45deg,#f3f3f1 0 9px,#fafafa 9px 18px);
+  aspect-ratio:16/9;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  text-align:center;padding:20px;
+}
+
+/* inline images in prose */
+.img-full{
+  margin:clamp(22px,4vw,38px) 0;
+  border:1px solid var(--rule);
+  overflow:hidden;
+}
+.img-full img{
+  display:block;width:100%;height:auto;
+}
+
+/* ---------- footer ---------- */
+.foot{
+  max-width:var(--maxw);margin:0 auto;
+  padding:26px clamp(22px,5vw,40px) 48px;
+  border-top:1px solid var(--rule);
+  display:flex;justify-content:flex-end;gap:16px;flex-wrap:wrap;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+}
+.foot a{border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.foot a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+.back{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  margin-top:clamp(40px,7vw,72px);transition:color .2s;
+}
+.back:hover{color:var(--ink)}
+.back .a{transition:transform .25s}
+.back:hover .a{transform:translateX(-4px)}
+
+@media (max-width:560px){
+  .dig{grid-template-columns:1fr;gap:4px}
+  .dig .idx{padding-top:0}
+  .subs,.dig .meta{grid-column:1}
+  .masthead .dateline{display:none}
+}
+
+/* The rabbit peek + dive is this site's signature interaction, so it always
+   animates. (The loader handles its own reduced-motion calming of parallax.) */
+
+/* ---- image loading shimmer + fade-in ---- */
+img.img-loading {
+  opacity: 0;
+}
+img.img-loaded {
+  opacity: 1;
+  transition: opacity .45s ease;
+}
+.lp-thumb,
+.photo-grid,
+.uni-logo {
+  position: relative;
+}
+.lp-thumb img.img-loading,
+.photo-grid img.img-loading,
+.uni-logo img.img-loading {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* shimmer on the container while image is in-flight */
+.lp-thumb:has(img.img-loading),
+.photo-grid > img.img-loading {
+  background: linear-gradient(90deg, #efefed 25%, #e4e4e2 50%, #efefed 75%);
+  background-size: 300% 100%;
+  animation: img-shimmer 1.4s ease-in-out infinite;
+}
+@keyframes img-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}

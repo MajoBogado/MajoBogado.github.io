@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>meni — Hardware — Majo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/loader.css">
+<style>
+/* ─── Teenage Engineering design tokens ─── */
+:root {
+  --te-o: #F0621F;
+  --te-k: #0f0f0f;
+  --te-g: #7a7a7a;
+  --te-r: #d8d8d8;
+}
+
+/* section rule */
+.hw-rule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--te-r);
+  padding-top: 10px;
+  margin: clamp(40px,7vw,72px) 0 clamp(24px,4vw,40px);
+}
+.hw-rule-label {
+  font-size: 9px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--te-g);
+  white-space: nowrap;
+}
+.hw-rule-index {
+  font-size: 9px;
+  letter-spacing: .1em;
+  color: var(--te-o);
+}
+
+/* ── hero ── */
+.hw-hero {
+  margin: clamp(24px,5vw,48px) 0 0;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(24px,4vw,48px);
+  align-items: start;
+}
+.hw-hero-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hw-hero-img img {
+  width: 75%;
+  max-height: 560px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── hero component stack (right col) ── */
+.hw-hero-comps {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--te-r);
+}
+.hw-hero-text {}
+.hw-hero-eyebrow {
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--te-g);
+  margin-bottom: 16px;
+  display: block;
+}
+.hw-hero-title {
+  font-size: clamp(36px,6vw,60px);
+  font-weight: 300;
+  color: var(--te-k);
+  letter-spacing: -.02em;
+  line-height: .95;
+  margin-bottom: 24px;
+}
+.hw-hero-title em {
+  font-style: normal;
+  color: var(--te-o);
+}
+.hw-hero-desc {
+  font-size: 11px;
+  color: var(--te-g);
+  line-height: 1.8;
+  letter-spacing: .04em;
+  margin-bottom: 24px;
+}
+.hw-hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hw-meta-row {
+  display: flex;
+  gap: 12px;
+}
+.hw-meta-key {
+  font-size: 8.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--te-r);
+  min-width: 60px;
+}
+.hw-meta-val {
+  font-size: 8.5px;
+  letter-spacing: .06em;
+  color: var(--te-g);
+}
+
+/* ── component card (shared) ── */
+.hw-comp {
+  display: flex;
+  flex-direction: column;
+}
+/* hero stack variant — rows separated by border */
+.hw-hero-comps .hw-comp {
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid var(--te-r);
+  gap: 0;
+}
+.hw-hero-comps .hw-comp:last-child { border-bottom: none; }
+.hw-hero-comps .hw-comp-img {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--te-r);
+  padding: 16px;
+  background: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hw-hero-comps .hw-comp-img img {
+  max-width: 100%;
+  max-height: 128px;
+  object-fit: contain;
+  display: block;
+}
+.hw-hero-comps .hw-comp-body {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hw-comp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 240px;
+}
+.hw-comp-num {
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--te-k);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.hw-comp-tag {
+  font-size: 8.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--te-g);
+}
+.hw-comp-name {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--te-k);
+  margin-bottom: 2px;
+}
+.hw-comp-spec {
+  display: block;
+  font-size: 8px;
+  letter-spacing: .06em;
+  color: var(--te-g);
+  text-transform: uppercase;
+}
+
+/* ── process — editorial stacked ── */
+.hw-proc-item {
+  margin-top: clamp(32px,5vw,56px);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 clamp(20px,3vw,36px);
+  align-items: start;
+}
+.hw-proc-meta {
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hw-proc-ver {
+  font-size: 9px;
+  letter-spacing: .1em;
+  color: var(--te-o);
+  text-transform: uppercase;
+}
+.hw-proc-label {
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--te-g);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  margin-top: 8px;
+}
+.hw-proc-img-wrap {
+  overflow: hidden;
+  height: clamp(300px, 42vw, 460px);
+}
+.hw-proc-img-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+@media (max-width: 580px) {
+  .hw-proc-item { grid-template-columns: 1fr; }
+  .hw-proc-label { writing-mode: horizontal-tb; transform: none; margin-top: 0; }
+}
+
+/* responsive: stack on narrow */
+@media (max-width: 580px) {
+  .hw-hero { grid-template-columns: 1fr; }
+  .hw-process { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead thin">
+  <a class="wordmark" href="../../index.html" data-dig data-label="Home">Majo</a>
+</header>
+<nav class="crumbs">
+  <a href="../../index.html" data-dig data-label="Home">Majo</a><span class="sep">/</span>
+  <a href="../../projects.html" data-dig data-label="Projects">Projects</a><span class="sep">/</span>
+  <a href="../meni.html" data-dig data-label="meni">meni</a><span class="sep">/</span>
+  <span class="here">Hardware</span>
+</nav>
+<section class="page-head">
+  <p class="eyebrow">meni — 02</p>
+  <h1>Hardware</h1>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<div class="hw-hero">
+  <div class="hw-hero-img">
+    <img src="../../assets/img/meni-device-hand.png" alt="meni v1.0 device in hand">
+  </div>
+
+  <div class="hw-hero-comps">
+
+    <div class="hw-comp">
+      <div class="hw-comp-img">
+        <img src="../../assets/img/meni-battery.jpg" alt="3.7V LiPo Battery">
+      </div>
+      <div class="hw-comp-body">
+        <div class="hw-comp-top">
+          <span class="hw-comp-num">01</span>
+          <span class="hw-comp-tag">power</span>
+        </div>
+        <span class="hw-comp-name">Battery</span>
+        <span class="hw-comp-spec">3.7V · 3000mAh · LiPo</span>
+      </div>
+    </div>
+
+    <div class="hw-comp">
+      <div class="hw-comp-img">
+        <img src="../../assets/img/meni-esp32.png" alt="ESP32 WROOM-32">
+      </div>
+      <div class="hw-comp-body">
+        <div class="hw-comp-top">
+          <span class="hw-comp-num">02</span>
+          <span class="hw-comp-tag">brain</span>
+        </div>
+        <span class="hw-comp-name">ESP32</span>
+        <span class="hw-comp-spec">WROOM-32 · Wi-Fi · BLE</span>
+      </div>
+    </div>
+
+    <div class="hw-comp">
+      <div class="hw-comp-img">
+        <img src="../../assets/img/meni-mpu6050.webp" alt="MPU-6050">
+      </div>
+      <div class="hw-comp-body">
+        <div class="hw-comp-top">
+          <span class="hw-comp-num">03</span>
+          <span class="hw-comp-tag">motion</span>
+        </div>
+        <span class="hw-comp-name">MPU-6050</span>
+        <span class="hw-comp-spec">6-axis · gyro + accel · I²C</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ PROCESS ═══ -->
+<div class="hw-rule">
+  <span class="hw-rule-label">Process</span>
+  <span class="hw-rule-index">— 02</span>
+</div>
+
+<div class="hw-proc-item">
+  <div class="hw-proc-meta">
+    <span class="hw-proc-ver">v.01</span>
+    <span class="hw-proc-label">Breadboard proto</span>
+  </div>
+  <div class="hw-proc-img-wrap">
+    <img src="../../assets/img/meni-proto-rot.jpg" alt="Breadboard prototype">
+  </div>
+</div>
+
+<div class="hw-proc-item">
+  <div class="hw-proc-meta">
+    <span class="hw-proc-ver">v1.0</span>
+    <span class="hw-proc-label">PCB render</span>
+  </div>
+  <div class="hw-proc-img-wrap">
+    <img src="../../assets/img/meni-pcb3d.jpg" alt="PCB 3D render">
+  </div>
+</div>
+
+<a class="back" href="../meni.html" data-dig data-label="meni" style="margin-top: clamp(40px,6vw,64px)"><span class="a">←</span> Back to meni</a>
+</div>
+<footer class="foot">
+  <span>No social media. <a href="../../index.html" data-dig data-label="Home">Just this.</a></span>
+</footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>
